@@ -30,6 +30,10 @@ namespace CrudNotebook.Controllers
         public IActionResult Save(ModelContact contact)
         {
             // Receive contact and save to database
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
             var result = _contactData.Save(contact);
 
             if (result)
