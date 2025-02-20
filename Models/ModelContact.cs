@@ -1,0 +1,11 @@
+﻿namespace CrudNotebook.Models
+{
+    public class ModelContact
+    {
+        public int IdContact { get; set; }
+        public string? Name { get; set; }
+        public string? Phone { get; set; }
+        public string? Email { get; set; }
+        
+    }
+}
