@@ -19,6 +19,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Maintenance}/{action=Save}/{id?}");
+    pattern: "{controller=Maintenance}/{action=ListContacts}/{id?}");
 
 app.Run();
