@@ -1,32 +1,33 @@
 ﻿@model ModelContact
 @{
-    ViewData["Title"] = "Save";
+    ViewData["Title"] = "Edit";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <div class="card">
     <div class="card-header">
-        Create Contact
+        Edit Contact
     </div>
     <div class="card-body">
-        <form asp-action="Save" asp-controller="Maintenance" method="post">
+        <form asp-action="Edit" asp-controller="Maintenance" method="post">
+            <input asp-for="IdContact" type="hidden" class="form-control">
             <div class="mb-3">
-				<label class="form-label">Name</label>
-				<input asp-for="Name" type="text" class="form-control" placeholder="Name">
+                <label class="form-label">Name</label>
+                <input asp-for="Name" type="text" class="form-control">
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
             <div class="mb-3">
-				<label class="form-label">Phone</label>
-				<input asp-for="Phone" type="text" class="form-control" placeholder="Phone">
+                <label class="form-label">Phone</label>
+                <input asp-for="Phone" type="text" class="form-control">
                 <span asp-validation-for="Phone" class="text-danger"></span>
             </div>
             <div class="mb-3">
                 <label class="form-label">Email</label>
-                <input asp-for="Email" type="text" class="form-control" placeholder="Email">
+                <input asp-for="Email" type="text" class="form-control">
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
-            <button type="submit" class="btn btn-primary">Save</button>
+            <button type="submit" class="btn btn-primary">Update</button>
             <a asp-action="ListContacts" asp-controller="Maintenance" class="btn btn-warning">Return to list</a>
         </form>
-	</div>
+    </div>
 </div>

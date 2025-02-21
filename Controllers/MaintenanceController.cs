@@ -45,5 +45,55 @@ namespace CrudNotebook.Controllers
                 return View();
             }
         }
+
+        public IActionResult Edit(int IdContact)
+        {
+            // Edit a contact
+            var contact = _contactData.GetContact(IdContact);
+            return View(contact);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(ModelContact contact)
+        {
+            // Receive contact and edit to database
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+            var result = _contactData.Edit(contact);
+
+            if (result)
+            {
+                return RedirectToAction("ListContacts");
+            }
+            else
+            {
+                return View();
+            }
+        }
+
+        public IActionResult Delete(int IdContact)
+        {
+            // Delete contact
+            var contact = _contactData.GetContact(IdContact);
+            return View(contact);
+        }
+
+        [HttpPost]
+        public IActionResult Delete(ModelContact contact)
+        {
+            // Receive contact and delete to database
+            var result = _contactData.Delete(contact.IdContact);
+
+            if (result)
+            {
+                return RedirectToAction("ListContacts");
+            }
+            else
+            {
+                return View();
+            }
+        }
     }
 }

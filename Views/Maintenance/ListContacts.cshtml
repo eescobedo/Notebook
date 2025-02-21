@@ -10,7 +10,7 @@
     </div>
     <div class="card-body">
 
-		<a asp-action="Save" asp-controller="Maintenance" class="btn btn-success">Create contact</a>
+		<a asp-action="Save" asp-controller="Maintenance" class="btn btn-success"><i class="bi bi-plus-circle"></i> Create contact</a>
 		<hr />
 		
 		<table class="table table-bordered">
@@ -30,8 +30,8 @@
 						<td>@contact.Phone</td>
 						<td>@contact.Email</td>
 						<td>
-							<a asp-action="Edit" asp-controller="Maintenance" asp-route-id="@contact.IdContact" class="btn btn-primary btn-sm">Edit</a>
-							<a asp-action="Delete" asp-controller="Maintenance" asp-route-id="@contact.IdContact" class="btn btn-danger btn-sm">Delete</a>
+							<a asp-action="Edit" asp-controller="Maintenance" asp-route-IdContact="@contact.IdContact" class="btn btn-primary btn-sm">Edit</a>
+							<a asp-action="Delete" asp-controller="Maintenance" asp-route-IdContact="@contact.IdContact" class="btn btn-danger btn-sm">Delete</a>
 						</td>
 					</tr>
 				}
